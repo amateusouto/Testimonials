@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root{
+    --Purple-50: hsl(260, 100%, 95%);
+    --Purple-300: hsl(264, 82%, 80%);
+    --Purple-500: hsl(263, 55%, 52%);
+    --White: hsl(0, 0%, 100%);
+    --Grey-100: hsl(214, 17%, 92%);
+    --Grey-200: hsl(0, 0%, 81%);
+    --Grey-400: hsl(224, 10%, 45%);
+    --Grey-500: hsl(217, 19%, 35%);
+    --Dark-blue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+
+    --font-size: 0.81rem;
+    --font-family: Barlow Semi Condensed, serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Grey-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
+    font-family: var(--font-family);
+    padding-block-start: 2rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 24rem;
+    gap: 2rem;
+    padding: 2rem;
+
+}
+
+article{
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.2rem;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+address{
+    display:flex;
+    align-items: center;
+    gap: 1rem;
+    font-style: normal;
+    position: relative;
+}
+
+address img{
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    border: 0.15rem solid var(--White);
+}
+
+footer{
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+footer a:focus-visible{
+    outline: 0.1rem solid var(--Purple-500);
+    outline-offset: 0.2rem;
+    border-radius: 0.1rem;
+    text-decoration: none;
+    color: var(--Purple-300);
+}
+
+h2{
+    font-size: 0.8rem;
+}
+
+h3{
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+p{
+    font-size: var(--font-size);
+}
+
+.patern {
+    display: none;
+    border: none;         
+    position: absolute;  
+    top: 0;               
+    right: 5.5rem;          
+    width: 6rem;       
+    z-index: 0;       
+}
+
+p.verified{
+    font-size: 0.68rem;
+}
+
+.card-purple{
+    background-color: var(--Purple-500);
+}
+.card-purple h2{
+    color: var(--White);
+}
+.card-purple h3,
+.card-purple p{
+    color: var(--Purple-50);
+}
+.card-purple img:not(.patern img){
+    border: 0.15rem solid var(--Purple-300);
+}
+
+.card-grey{
+    background-color: var(--Grey-500);
+    color: var(--White);
+}
+.card-grey p{
+    color: var(--Grey-200);
+}
+
+.card-white{
+    background-color: var(--White);
+    color: var(--Grey-400);
+}
+
+.card-darkblue{
+    background-color: var(--Dark-blue);
+    color: var(--Grey-200);
+}
+.card-darkblue img{
+    border: 0.15rem solid var(--Purple-500);
+}
+
+@media (min-width: 40rem){
+     main {
+        display: grid;
+        align-items: stretch;
+        grid-template-columns: repeat(2, 1fr);
+       
+        grid-template-areas: 
+            "daniel jonathan"
+            "daniel jeanette"
+            "patrick kira"
+            "patrick kira";
+        
+        max-width: 40rem;
+        gap: 2rem;
+    }
+
+    .patern {
+        display: block;
+        right: 4rem; 
+    }
+
+    .card-purple {
+        grid-area: daniel;
+    }
+    .card-grey {
+        grid-area: jonathan;
+    }
+    .card-jeanette {
+        grid-area: jeanette;
+    }
+    .card-darkblue {
+        grid-area: patrick;
+    }
+    .card-kira {
+        grid-area: kira;
+    }
+}
+
+@media (min-width: 64rem) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+       
+        grid-template-areas: 
+            "daniel daniel jonathan kira"
+            "jeanette patrick patrick kira";
+        
+        max-width: 74rem;
+        gap: 2rem;
+    }
+
+    .patern{
+        right: 5.5rem;  
+    }
+
+}
