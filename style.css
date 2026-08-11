@@ -50,6 +50,7 @@ article{
     padding: 2.2rem;
     border-radius: 0.5rem;
     position: relative;
+    box-shadow: 0 1rem 2rem -1rem var(--Grey-500);
 }
 
 address{
@@ -64,7 +65,6 @@ address img{
     width: 1.8rem;
     height: 1.8rem;
     border-radius: 50%;
-    border: 0.15rem solid var(--White);
 }
 
 footer{
@@ -94,6 +94,9 @@ p{
     font-size: var(--font-size);
 }
 
+.sr-only{
+    display: none;
+}
 .patern {
     display: none;
     border: none;         
